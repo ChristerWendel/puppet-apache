@@ -8,7 +8,7 @@
 
 define apache::loadconf() {
   exec { "/usr/sbin/a2enconf ${name}" :
-    creates => "/etc/apache2/conf.enabled/${name}.conf",
+    creates => "/etc/apache2/conf-enabled/${name}.conf",
     notify  => Service['apache2'],
   }
 }
