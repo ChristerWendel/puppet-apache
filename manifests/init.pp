@@ -17,7 +17,8 @@ class apache (
   $enable = true,
   $start = true
   )  {
-    class{'apache::install': } ~>
+    class{'apache::install': } ->
+    class{'apache::configure': } ~>
     class{'apache::service': } ->
     Class['apache']
   }
